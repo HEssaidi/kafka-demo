@@ -1,7 +1,7 @@
 package com.example.kafkademoproducer.service;
 
+import com.example.kafkademoproducer.model.Agency;
 import lombok.RequiredArgsConstructor;
-
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.kafka.core.KafkaTemplate;
@@ -16,10 +16,10 @@ public class TopicProducer {
     private String topicName;
 
 
-    private final KafkaTemplate<String, String> kafkaTemplate;
+    private final KafkaTemplate<String, Agency> kafkaTemplate;
 
-    public void send(String message){
-        log.info("Payload enviado: {}",message);
-        kafkaTemplate.send(topicName, message);
+    public void send(Agency agency){
+        log.info("Payload enviado: {}",agency);
+        kafkaTemplate.send(topicName, agency);
     }
 }

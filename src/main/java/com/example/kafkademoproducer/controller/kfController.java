@@ -1,9 +1,10 @@
 package com.example.kafkademoproducer.controller;
 
+import com.example.kafkademoproducer.model.Agency;
 import com.example.kafkademoproducer.service.TopicProducer;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,9 +15,9 @@ import org.springframework.web.bind.annotation.RestController;
 public class kfController {
 
     private final TopicProducer topicProducer;
-    @GetMapping(value = "/send")
-    public void send(){
-        topicProducer.send("Producing messages to test our Kafka ecosystem");
+    @PostMapping(value = "/send")
+    public void send(@RequestBody Agency agency){
+        topicProducer.send(agency);
     }
 
 }
