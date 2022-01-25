@@ -3,17 +3,16 @@ Apache Kafka is a distributed messaging and streaming platform.<br/>
 It serves to move and transform a large amount of data between different systems. <br/>
 ### Kafka implmentation with spring boot 
 1. Kafka dependencies
-
-     
-     <dependency>
-			<groupId>org.apache.kafka</groupId>
-			<artifactId>kafka-streams</artifactId>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.kafka</groupId>
-			<artifactId>spring-kafka</artifactId>
-        </dependency>
-
+   ```
+   <dependency>
+   <groupId>org.apache.kafka</groupId>
+   <artifactId>kafka-streams</artifactId>
+   </dependency>
+   <dependency>
+   <groupId>org.springframework.kafka</groupId>
+   <artifactId>spring-kafka</artifactId>
+   </dependency>
+   ```
 2. application.properties configuration
 3. Add `@EnableKafka` into the main class
 ### Kafka annotations
